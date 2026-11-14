@@ -3,8 +3,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LUCKY DISTRICT — MINER'S DROP</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUCKY DISTRICT | MINER'S DROP</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
 
@@ -30,141 +30,81 @@ header{
 }
 .logo{font:900 19px Orbitron;letter-spacing:2px}
 .logo span{color:var(--cyan)}
-.balance{
- color:var(--green);background:#43ff9c0c;
- border:1px solid #43ff9c55;padding:9px 14px;border-radius:8px;
- font-weight:700;font-size:18px
-}
-.balance small{font-size:11px;color:var(--muted)}
-main{max-width:1250px;margin:auto;padding:32px 20px 65px}
+main{max-width:1250px;margin:auto;padding:30px 18px 60px}
 .hero{
- padding:34px;border:1px solid var(--border);border-radius:15px;
- background:linear-gradient(110deg,#00efff12,#a855f712),var(--panel);
+ padding:30px;border:1px solid var(--border);border-radius:15px;
+ background:linear-gradient(110deg,#00efff12,#a855f712),var(--panel)
 }
 .eyebrow{font:700 11px Orbitron;color:var(--cyan);letter-spacing:3px}
-h1{font:900 clamp(25px,5vw,43px) Orbitron;margin:13px 0}
-.hero p{color:var(--muted);font-size:18px;margin:0}
-.section-title{font:700 16px Orbitron;margin:30px 0 16px}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-.game-card{
- background:linear-gradient(145deg,var(--panel2),var(--panel));
- border:1px solid var(--border);border-radius:12px;padding:21px;
- cursor:pointer;transition:.2s;min-height:170px
+h1{font:900 clamp(25px,5vw,40px) Orbitron;margin:12px 0}
+.hero p{color:var(--muted);font-size:17px;margin:0}
+#game{margin-top:25px}
+.topbar{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:12px;flex-wrap:wrap;margin-bottom:16px
 }
-.game-card:hover{border-color:var(--cyan);transform:translateY(-3px)}
-.game-icon{font-size:35px;margin-bottom:13px}
-.game-card h3{font:700 13px Orbitron}
-.game-card p{color:var(--muted);font-size:15px}
-.tag{color:var(--green);font-size:11px}
-#miner{display:none;margin-top:30px}
-.miner-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-.miner-head h2{font:700 22px Orbitron}
+.topbar h2{font:700 19px Orbitron;margin:0}
 .back{background:none;border:1px solid var(--border);color:var(--muted);padding:9px 13px;border-radius:7px}
-.layout{display:grid;grid-template-columns:320px 1fr;gap:17px}
-.panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:19px}
-.panel h3{font:700 12px Orbitron;letter-spacing:1px;margin:0 0 15px}
-label{display:block;color:var(--muted);margin-bottom:7px}
-input{
- width:100%;padding:12px;background:#080e18;color:white;
- border:1px solid var(--border);border-radius:7px;
- font:700 18px Rajdhani;margin-bottom:10px
-}
-.quick{display:flex;gap:6px;margin-bottom:20px}
-.quick button{flex:1;background:#1a2639;color:white;border:1px solid var(--border);padding:8px;border-radius:6px}
-.pick-list{display:grid;gap:8px}
+.layout{display:grid;grid-template-columns:290px 1fr;gap:15px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:17px}
+.panel h3{font:700 12px Orbitron;letter-spacing:1px;margin:0 0 13px}
+.picks{display:grid;gap:7px}
 .pick{
- display:grid;grid-template-columns:34px 1fr auto;align-items:center;
- gap:8px;padding:10px;background:#0c1420;border:1px solid var(--border);border-radius:7px
+ display:grid;grid-template-columns:32px 1fr auto;gap:8px;
+ align-items:center;padding:9px;border:1px solid var(--border);
+ background:#0b1420;border-radius:7px
 }
-.pick .icon{font-size:25px}
+.pick .icon{font-size:24px}
 .pick strong{display:block;font-size:14px}
 .pick small{font-size:11px;color:var(--muted)}
-.pick .odds{text-align:right;color:var(--cyan);font-size:13px}
+.pick .odds{font-size:12px;color:var(--cyan)}
 .start{
- width:100%;padding:15px;margin-top:20px;border:0;border-radius:7px;
+ width:100%;padding:14px;margin-top:15px;border:0;border-radius:7px;
  background:linear-gradient(90deg,var(--cyan),#8af8ff);
  color:#061016;font:900 12px Orbitron;letter-spacing:1px
 }
 .start:disabled{opacity:.4;cursor:not-allowed}
-.notice{font-size:12px;color:var(--muted);line-height:1.5}
-.mine-panel{min-height:660px;overflow:hidden}
-.topline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.status{font:700 11px Orbitron;color:var(--cyan)}
-.depth{color:var(--muted);font-size:14px}
-.mine{
- height:445px;max-width:440px;margin:20px auto 0;
- position:relative;overflow:hidden;border:2px solid #34445b;
- border-radius:8px;
- background:linear-gradient(90deg,#121e2d,#26384d 50%,#121e2d);
- box-shadow:inset 0 0 45px #000
+.stats{
+ display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:15px
 }
-.mine:before,.mine:after{
- content:"";position:absolute;top:0;bottom:0;width:24px;z-index:4;
- background:repeating-linear-gradient(180deg,#43536a 0 18px,#1c2939 18px 38px)
-}
-.mine:before{left:0}.mine:after{right:0}
-.track{
- position:absolute;left:27px;right:27px;top:0;
- display:flex;flex-direction:column;transition:transform .4s
-}
-.layer{
- height:64px;flex-shrink:0;display:flex;align-items:center;
- justify-content:space-around;font-size:25px;
- background:linear-gradient(90deg,#28394d,#3a4a5c,#28394d);
- border-bottom:3px solid #0b1420;position:relative
-}
-.layer:nth-child(even){background:linear-gradient(90deg,#1b2a3a,#304155,#1b2a3a)}
-.layer.hit{animation:hit .24s ease}
-.layer.destroyed{animation:destroy .45s forwards}
-@keyframes hit{
- 0%{filter:brightness(1);transform:translateX(0)}
- 35%{filter:brightness(2);transform:translateX(-5px)}
- 70%{transform:translateX(5px)}
- 100%{transform:translateX(0)}
-}
-@keyframes destroy{
- 0%{opacity:1;transform:scale(1)}
- 100%{opacity:0;transform:scale(.4) rotate(5deg)}
-}
-.pickaxe{
- position:absolute;z-index:5;top:5px;left:50%;
- transform:translateX(-50%);font-size:39px;
- filter:drop-shadow(0 0 12px var(--cyan));
- transition:top .45s cubic-bezier(.2,.7,.2,1)
-}
-.pickaxe.bounce{animation:bounce .45s ease-out}
-@keyframes bounce{
- 0%{transform:translateX(-50%) translateY(0) rotate(0)}
- 30%{transform:translateX(-50%) translateY(-27px) rotate(-22deg)}
- 65%{transform:translateX(-50%) translateY(3px) rotate(15deg)}
- 100%{transform:translateX(-50%) translateY(0) rotate(0)}
-}
-.mine-bottom{position:absolute;bottom:8px;left:0;right:0;text-align:center;font:10px Orbitron;color:#8394a9;z-index:3}
-.hp-wrap{max-width:440px;margin:12px auto 0}
-.hp-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
-.hp-bar{height:9px;background:#283344;border-radius:10px;overflow:hidden}
-.hp-fill{height:100%;width:100%;background:var(--green);transition:width .3s,background .3s}
-.result{
- text-align:center;padding:15px;margin-top:17px;
- background:#0b1420;border:1px solid var(--border);border-radius:8px;min-height:75px
-}
-.result strong{display:block;font:700 15px Orbitron;margin-bottom:6px}
-.result p{color:var(--muted);margin:0;font-size:15px}
-.result.win strong{color:var(--green)}
-.result.loss strong{color:var(--pink)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
-.stat{background:#0b1420;border:1px solid var(--border);padding:10px;border-radius:7px}
+.stat{padding:10px;background:#0b1420;border:1px solid var(--border);border-radius:7px}
 .stat small{display:block;color:var(--muted);font-size:11px}
-.stat strong{font:700 15px Orbitron;color:var(--cyan)}
-.history{margin-top:20px}
-.history-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #263246;font-size:14px}
-footer{text-align:center;color:#53647a;padding:25px;font-size:13px}
+.stat strong{font:700 16px Orbitron;color:var(--cyan)}
+.bar-label{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin:12px 0 5px}
+.bar{height:9px;background:#273448;border-radius:20px;overflow:hidden}
+.fill{height:100%;width:100%;background:var(--green);transition:width .2s}
+.mine-panel{padding:12px;min-width:0}
+.mine-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:7px 5px 12px}
+.status{font:700 11px Orbitron;color:var(--cyan)}
+#depth{color:var(--muted);font-size:14px}
+#mine{
+ width:100%;height:590px;display:block;border:1px solid #34445b;
+ border-radius:8px;background:#111c2b;
+}
+.controls{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px}
+.controls span{font-size:13px;color:var(--muted)}
+.boosters{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}
+.booster{
+ background:#0b1420;border:1px solid var(--border);
+ border-radius:7px;text-align:center;padding:9px 3px;min-width:0
+}
+.booster span{font-size:21px;display:block}
+.booster small{font-size:10px;color:var(--muted)}
+.message{
+ padding:14px;margin-top:13px;border:1px solid var(--border);
+ background:#0b1420;border-radius:8px;text-align:center
+}
+.message strong{font:700 14px Orbitron}
+.message p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.records{margin-top:20px}
+.record{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #263246;font-size:14px}
+.notice{font-size:12px;line-height:1.5;color:var(--muted)}
 @media(max-width:800px){
  .layout{grid-template-columns:1fr}
- header{padding:0 15px}
- main{padding:20px 13px}
- .hero{padding:24px}
- .stats{grid-template-columns:repeat(2,1fr)}
+ #mine{height:510px}
+ .boosters{grid-template-columns:repeat(5,1fr)}
+ main{padding:18px 12px}
+ .hero{padding:22px}
 }
 </style>
 </head>
@@ -172,351 +112,668 @@ footer{text-align:center;color:#53647a;padding:25px;font-size:13px}
 
 <header>
  <div class="logo">LUCKY <span>DISTRICT</span></div>
- <div class="balance"><small>FICHAS</small> 🪙 <span id="balance">1000</span></div>
+ <div style="font:700 11px Orbitron;color:var(--cyan)">ARCADE MODE</div>
 </header>
 
 <main>
  <section class="hero">
-  <div class="eyebrow">WELCOME TO THE DISTRICT</div>
-  <h1>YOUR LUCK. YOUR DISTRICT.</h1>
-  <p>Explora el distrito y descubre experiencias aleatorias.</p>
+  <div class="eyebrow">LUCKY DISTRICT ARCADE</div>
+  <h1>MINER'S DROP</h1>
+  <p>La gravedad decide el camino. Tu pico decide cuánto puede resistir.</p>
  </section>
 
- <section id="lobby">
-  <div class="section-title">▰ EXPLORA LOS JUEGOS</div>
-  <div class="games">
-   <div class="game-card" onclick="openMiner()">
-    <div class="game-icon">⛏️</div>
-    <h3>MINER'S DROP</h3>
-    <p>Un pico cae por una mina llena de minerales.</p>
-    <div class="tag">● DISPONIBLE</div>
-   </div>
-   <div class="game-card"><div class="game-icon">🎰</div><h3>NEON SLOTS</h3><p>Máquina de símbolos y combinaciones.</p><div class="tag">PRÓXIMAMENTE</div></div>
-   <div class="game-card"><div class="game-icon">🎡</div><h3>LUCKY WHEEL</h3><p>Una rueda de resultados sorpresa.</p><div class="tag">PRÓXIMAMENTE</div></div>
-   <div class="game-card"><div class="game-icon">🎲</div><h3>DICE DISTRICT</h3><p>Dados y números aleatorios.</p><div class="tag">PRÓXIMAMENTE</div></div>
-  </div>
- </section>
-
- <section id="miner">
-  <div class="miner-head">
-   <h2>⛏️ MINER'S DROP</h2>
-   <button class="back" onclick="closeMiner()">← VOLVER</button>
+ <section id="game">
+  <div class="topbar">
+   <h2>⛏️ MINER'S DROP / PHYSICS ENGINE</h2>
+   <button class="back" onclick="resetScreen()">REINICIAR</button>
   </div>
 
   <div class="layout">
    <aside class="panel">
-    <h3>01 / FICHAS DE JUEGO</h3>
-    <label>Cantidad de fichas ficticias</label>
-    <input id="stake" type="number" min="1" max="1000" value="50">
-    <div class="quick">
-     <button onclick="setStake(10)">10</button>
-     <button onclick="setStake(25)">25</button>
-     <button onclick="setStake(50)">50</button>
-     <button onclick="setStake(100)">100</button>
+    <h3>01 / SISTEMA DE PICOS</h3>
+    <div class="picks">
+     <div class="pick"><span class="icon">🪓</span><div><strong>PIEDRA</strong><small>100 HP · Básico</small></div><span class="odds">50%</span></div>
+     <div class="pick"><span class="icon">⛏️</span><div><strong>HIERRO</strong><small>200 HP · Resistente</small></div><span class="odds">27%</span></div>
+     <div class="pick"><span class="icon">🔱</span><div><strong>ORO</strong><small>300 HP · Avanzado</small></div><span class="odds">14%</span></div>
+     <div class="pick"><span class="icon">💎</span><div><strong>DIAMANTE</strong><small>400 HP · Especial</small></div><span class="odds">7%</span></div>
+     <div class="pick"><span class="icon">⚡</span><div><strong>NEÓN</strong><small>500 HP · Legendario</small></div><span class="odds">2%</span></div>
     </div>
 
-    <h3>02 / PICOS DISPONIBLES</h3>
-    <div class="pick-list">
-     <div class="pick"><span class="icon">🪓</span><div><strong>PIEDRA</strong><small>3 puntos de vida</small></div><span class="odds">50%</span></div>
-     <div class="pick"><span class="icon">⛏️</span><div><strong>HIERRO</strong><small>4 puntos de vida</small></div><span class="odds">27%</span></div>
-     <div class="pick"><span class="icon">🔱</span><div><strong>ORO</strong><small>5 puntos de vida</small></div><span class="odds">14%</span></div>
-     <div class="pick"><span class="icon">💎</span><div><strong>DIAMANTE</strong><small>7 puntos de vida</small></div><span class="odds">7%</span></div>
-     <div class="pick"><span class="icon">⚡</span><div><strong>NEÓN</strong><small>9 puntos de vida</small></div><span class="odds">2%</span></div>
+    <button class="start" id="start" onclick="startGame()">GENERAR PICO</button>
+
+    <div class="bar-label"><span>VIDA DEL PICO</span><b id="hpText">---</b></div>
+    <div class="bar"><div class="fill" id="hpFill"></div></div>
+
+    <div class="stats">
+     <div class="stat"><small>PROFUNDIDAD</small><strong id="depthStat">0 M</strong></div>
+     <div class="stat"><small>BLOQUES ROTOS</small><strong id="blocksStat">0</strong></div>
+     <div class="stat"><small>MINERALES</small><strong id="mineralsStat">0</strong></div>
+     <div class="stat"><small>PUNTUACIÓN</small><strong id="scoreStat">0</strong></div>
     </div>
 
-    <button class="start" id="startBtn" onclick="startGame()">LANZAR PICO ⛏️</button>
-    <p class="notice">Cada pico tiene una probabilidad distinta de aparecer y una resistencia propia. Las fichas son puntos ficticios, sin valor monetario, compra ni canje.</p>
+    <h3 style="margin-top:20px">02 / POTENCIADORES</h3>
+    <div class="boosters">
+     <div class="booster"><span>🛡️</span><small id="shieldCount">0</small></div>
+     <div class="booster"><span>🧲</span><small id="magnetCount">0</small></div>
+     <div class="booster"><span>🔥</span><small id="fireCount">0</small></div>
+     <div class="booster"><span>🍀</span><small id="luckCount">0</small></div>
+     <div class="booster"><span>⚡</span><small id="speedCount">0</small></div>
+    </div>
+    <p class="notice">
+     🛡️ Escudo: protege de impactos.<br>
+     🧲 Imán: atrae minerales cercanos.<br>
+     🔥 Fuego: mejora el daño a bloques.<br>
+     🍀 Suerte: aumenta la aparición de minerales.<br>
+     ⚡ Impulso: aumenta la fuerza del rebote.
+    </p>
    </aside>
 
    <section class="panel mine-panel">
-    <div class="topline">
-     <div class="status" id="status">● MINA EN ESPERA</div>
-     <div class="depth" id="depth">PROFUNDIDAD: 0 M</div>
+    <div class="mine-head">
+     <div class="status" id="status">● ESPERANDO INICIO</div>
+     <div id="depth">PROFUNDIDAD: 0 M</div>
     </div>
 
-    <div class="mine">
-     <div class="track" id="track"></div>
-     <div class="pickaxe" id="pickaxe">⛏️</div>
-     <div class="mine-bottom">▼ ZONA PROFUNDA ▼</div>
+    <canvas id="mine" width="900" height="1180"></canvas>
+
+    <div class="controls">
+     <span id="physics">FÍSICA: INACTIVA</span>
+     <span id="velocity">VELOCIDAD: 0</span>
+     <span id="pickName">PICO: ---</span>
     </div>
 
-    <div class="hp-wrap">
-     <div class="hp-label"><span>RESISTENCIA DEL PICO</span><strong id="hpText">—</strong></div>
-     <div class="hp-bar"><div class="hp-fill" id="hpFill"></div></div>
+    <div class="message" id="message">
+     <strong>BIENVENIDO A LA MINA</strong>
+     <p>Genera un pico y observa cómo cae mediante física simulada.</p>
     </div>
 
-    <div class="result" id="result">
-     <strong>LA MINA TE ESPERA</strong>
-     <p>El pico será seleccionado al azar.</p>
-    </div>
-
-    <div class="stats">
-     <div class="stat"><small>BLOQUES ROTOS</small><strong id="broken">0</strong></div>
-     <div class="stat"><small>MINERALES</small><strong id="found">0</strong></div>
-     <div class="stat"><small>FICHAS OBTENIDAS</small><strong id="reward">0</strong></div>
-     <div class="stat"><small>VIDA RESTANTE</small><strong id="life">—</strong></div>
-    </div>
-
-    <div class="history">
-     <h3>ÚLTIMAS RONDAS</h3>
-     <div id="history">Todavía no hay rondas.</div>
+    <div class="records">
+     <h3>RECORD PERSONAL</h3>
+     <div class="record"><span>Mayor profundidad</span><b id="bestDepth">0 M</b></div>
+     <div class="record"><span>Mayor puntuación</span><b id="bestScore">0</b></div>
+     <div class="record"><span>Minerales encontrados</span><b id="totalMinerals">0</b></div>
     </div>
    </section>
   </div>
  </section>
 </main>
 
-<footer>LUCKY DISTRICT © 2026 · JUEGO DE ARCADE CON PUNTOS FICTICIOS</footer>
-
 <script>
+const canvas=document.getElementById("mine");
+const ctx=canvas.getContext("2d");
+
 const $=id=>document.getElementById(id);
 
-let balance=Number(localStorage.getItem("ld_balance"))||1000;
-let history=JSON.parse(localStorage.getItem("ld_history")||"[]");
-let busy=false;
+const TILE=90;
+const COLS=10;
+const WORLD_ROWS=90;
+const WORLD_WIDTH=COLS*TILE;
 
 const pickaxes=[
- {name:"PIEDRA",icon:"🪓",hp:3,weight:50},
- {name:"HIERRO",icon:"⛏️",hp:4,weight:27},
- {name:"ORO",icon:"🔱",hp:5,weight:14},
- {name:"DIAMANTE",icon:"💎",hp:7,weight:7},
- {name:"NEÓN",icon:"⚡",hp:9,weight:2}
+ {name:"PIEDRA",icon:"🪓",hp:100,weight:50,color:"#aeb8c7"},
+ {name:"HIERRO",icon:"⛏️",hp:200,weight:27,color:"#9fb9ce"},
+ {name:"ORO",icon:"🔱",hp:300,weight:14,color:"#ffd45a"},
+ {name:"DIAMANTE",icon:"💎",hp:400,weight:7,color:"#52eaff"},
+ {name:"NEÓN",icon:"⚡",hp:500,weight:2,color:"#d47aff"}
 ];
 
-const minerals=[
- {name:"CARBÓN",icon:"⚫",value:5},
- {name:"COBRE",icon:"🟠",value:10},
- {name:"HIERRO",icon:"🩶",value:18},
- {name:"ORO",icon:"🟡",value:35},
- {name:"ESMERALDA",icon:"🟢",value:65},
- {name:"DIAMANTE",icon:"💎",value:110},
- {name:"CRISTAL NEÓN",icon:"💠",value:180}
+const mineralTypes=[
+ {name:"Carbón",icon:"⚫",value:10,color:"#343b48"},
+ {name:"Cobre",icon:"🟠",value:20,color:"#b96b36"},
+ {name:"Hierro",icon:"⚙️",value:35,color:"#9aafc5"},
+ {name:"Oro",icon:"🟡",value:60,color:"#f3c34c"},
+ {name:"Esmeralda",icon:"🟢",value:100,color:"#39d98a"},
+ {name:"Diamante",icon:"💎",value:180,color:"#43dcff"},
+ {name:"Cristal neón",icon:"💠",value:300,color:"#bc6aff"}
 ];
 
-function save(){
- localStorage.setItem("ld_balance",balance);
- localStorage.setItem("ld_history",JSON.stringify(history));
- $("balance").textContent=balance.toLocaleString("es-CL");
-}
+const boosterTypes=[
+ {id:"shield",icon:"🛡️",name:"Escudo"},
+ {id:"magnet",icon:"🧲",name:"Imán"},
+ {id:"fire",icon:"🔥",name:"Fuego"},
+ {id:"luck",icon:"🍀",name:"Suerte"},
+ {id:"speed",icon:"⚡",name:"Impulso"}
+];
 
-function openMiner(){
- $("lobby").style.display="none";
- $("miner").style.display="block";
- createMine();
- window.scrollTo({top:0,behavior:"smooth"});
-}
+let game=null;
+let animation=null;
+let lastTime=0;
+let cameraY=0;
+let particles=[];
+let floatingItems=[];
+let keys={};
 
-function closeMiner(){
- if(busy)return;
- $("miner").style.display="none";
- $("lobby").style.display="block";
-}
+let records=JSON.parse(localStorage.getItem("miner_records")||'{"depth":0,"score":0,"minerals":0}');
 
-function setStake(n){$("stake").value=n}
-function wait(ms){return new Promise(r=>setTimeout(r,ms))}
-
-function createMine(){
- $("track").innerHTML="";
- for(let i=0;i<20;i++){
-  const layer=document.createElement("div");
-  layer.className="layer";
-  layer.id="block"+i;
-  layer.innerHTML="<span>🪨</span><span>🪨</span><span>🪨</span>";
-  $("track").appendChild(layer);
+function weightedPick(list){
+ let total=list.reduce((s,x)=>s+x.weight,0);
+ let r=Math.random()*total;
+ for(const x of list){
+  r-=x.weight;
+  if(r<=0)return x;
  }
- $("pickaxe").style.top="5px";
- $("pickaxe").textContent="⛏️";
- $("pickaxe").classList.remove("bounce");
- $("track").style.transform="translateY(0)";
+ return list[0];
 }
 
-function showResult(title,message,type=""){
- $("result").className="result "+type;
- $("result").innerHTML="";
- const a=document.createElement("strong");
- const b=document.createElement("p");
- a.textContent=title;b.textContent=message;
- $("result").append(a,b);
-}
+function generateWorld(){
+ const blocks=[];
+ for(let row=0;row<WORLD_ROWS;row++){
+  for(let col=0;col<COLS;col++){
+   const depth=row*10;
+   const difficulty=Math.min(3,Math.floor(row/15));
+   let type="rock";
+   let hp=35+difficulty*12;
 
-function selectPickaxe(){
- const roll=Math.random()*100;
- let cumulative=0;
- for(const pick of pickaxes){
-  cumulative+=pick.weight;
-  if(roll<cumulative)return pick;
+   // Minerales progresivos y distribución irregular.
+   const chance=Math.min(.36,.10+row*.003);
+   if(Math.random()<chance){
+    const available=Math.min(6,Math.floor(row/12));
+    type="mineral";
+    const index=Math.floor(Math.random()*(available+1));
+    hp=25+difficulty*9;
+    blocks.push({
+     x:col*TILE,y:row*TILE,w:TILE,h:TILE,
+     type,hp,maxHp:hp,mineral:mineralTypes[index],
+     alive:true,hitFlash:0
+    });
+   }else{
+    blocks.push({
+     x:col*TILE,y:row*TILE,w:TILE,h:TILE,
+     type,hp,maxHp:hp,alive:true,hitFlash:0
+    });
+   }
+  }
  }
- return pickaxes[0];
+ return blocks;
 }
 
-function randomMineral(depth){
- const pools=[
-  [0,0,0,1,1],
-  [0,0,1,1,2],
-  [0,1,1,2,2,3],
-  [1,1,2,2,3,4],
-  [2,2,3,3,4,5],
-  [3,3,4,4,5,6],
-  [4,4,5,5,6,6]
- ];
- const pool=pools[Math.min(6,Math.floor(depth/3))];
- return minerals[pool[Math.floor(Math.random()*pool.length)]];
+function startGame(){
+ if(game&&game.running)return;
+ if(animation)cancelAnimationFrame(animation);
+
+ const pick=weightedPick(pickaxes);
+ game={
+  running:true,ended:false,pick,
+  hp:pick.hp,maxHP:pick.hp,
+  score:0,blocksBroken:0,mineralsFound:0,
+  depth:0,elapsed:0,
+  blocks:generateWorld(),
+  x:WORLD_WIDTH/2,
+  y:35,
+  vx:(Math.random()-.5)*190,
+  vy:20,
+  radius:25,
+  gravity:980,
+  restitution:.68,
+  bounceCount:0,
+  impactCooldown:0,
+  combo:0,
+  comboTimer:0,
+  inventory:{shield:0,magnet:0,fire:0,luck:0,speed:0},
+  effects:{shield:0,magnet:0,fire:0,luck:0,speed:0},
+  shake:0
+ };
+
+ particles=[];
+ floatingItems=[];
+ cameraY=0;
+
+ $("start").disabled=true;
+ $("status").textContent="● PICO EN CAÍDA";
+ $("pickName").textContent="PICO: "+pick.name;
+ $("physics").textContent="FÍSICA: ACTIVA";
+ $("message").innerHTML="<strong>"+pick.name+" GENERADO</strong><p>El pico ha comenzado su descenso.</p>";
+
+ updateHUD();
+ lastTime=performance.now();
+ animation=requestAnimationFrame(loop);
 }
 
-function updateHP(hp,max){
- $("hpText").textContent=hp+" / "+max;
- $("life").textContent=hp;
- $("hpFill").style.width=(hp/max*100)+"%";
- $("hpFill").style.background=hp/max<=.3?"var(--pink)":hp/max<=.6?"#ffd34d":"var(--green)";
-}
-
-async function startGame(){
- if(busy)return;
-
- const stake=Math.floor(Number($("stake").value));
- if(!Number.isFinite(stake)||stake<1){
-  showResult("CANTIDAD INVÁLIDA","Introduce una cantidad válida.");
-  return;
+function resetScreen(){
+ if(game&&game.running){
+  if(!confirm("¿Quieres detener la simulación actual?"))return;
  }
- if(stake>balance){
-  showResult("FICHAS INSUFICIENTES","No tienes suficientes puntos ficticios.");
-  return;
+ if(animation)cancelAnimationFrame(animation);
+ game=null;
+ $("start").disabled=false;
+ $("status").textContent="● ESPERANDO INICIO";
+ $("physics").textContent="FÍSICA: INACTIVA";
+ $("velocity").textContent="VELOCIDAD: 0";
+ $("pickName").textContent="PICO: ---";
+ $("message").innerHTML="<strong>MINA REINICIADA</strong><p>Genera otro pico para comenzar.</p>";
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function loop(now){
+ if(!game||!game.running)return;
+
+ const dt=Math.min((now-lastTime)/1000,.033);
+ lastTime=now;
+
+ updatePhysics(dt);
+ updateParticles(dt);
+ updateCamera();
+ draw();
+
+ animation=requestAnimationFrame(loop);
+}
+
+function updatePhysics(dt){
+ const g=game;
+ g.elapsed+=dt;
+ g.impactCooldown=Math.max(0,g.impactCooldown-dt);
+ g.comboTimer=Math.max(0,g.comboTimer-dt);
+
+ // Gravedad realista simplificada.
+ g.vy+=g.gravity*dt;
+ g.vy=Math.min(g.vy,1000);
+
+ // Efecto de impulso.
+ const boost=g.effects.speed>0?1.35:1;
+ g.x+=g.vx*dt*boost;
+ g.y+=g.vy*dt;
+
+ // Rozamiento lateral.
+ g.vx*=Math.pow(.997,dt*60);
+
+ // Paredes laterales.
+ if(g.x<g.radius){
+  g.x=g.radius;
+  g.vx=Math.abs(g.vx)*.82;
+  impactWall();
+ }
+ if(g.x>WORLD_WIDTH-g.radius){
+  g.x=WORLD_WIDTH-g.radius;
+  g.vx=-Math.abs(g.vx)*.82;
+  impactWall();
  }
 
- busy=true;
- $("startBtn").disabled=true;
- balance-=stake;
- save();
- createMine();
+ // Buscar colisión con el bloque más cercano.
+ if(g.impactCooldown<=0){
+  let target=null;
+  let best=Infinity;
 
- let total=0,broken=0,found=0;
- $("broken").textContent=0;
- $("found").textContent=0;
- $("reward").textContent=0;
- $("depth").textContent="PROFUNDIDAD: 0 M";
- $("status").textContent="● SELECCIONANDO PICO";
+  for(const block of g.blocks){
+   if(!block.alive)continue;
+   if(block.y>g.y+g.radius+25||block.y+TILE<g.y-g.radius-25)continue;
 
- showResult("SELECCIONANDO...","El sistema elegirá uno de los cinco picos.");
- await wait(1100);
+   const closestX=Math.max(block.x,Math.min(g.x,block.x+block.w));
+   const closestY=Math.max(block.y,Math.min(g.y,block.y+block.h));
+   const dx=g.x-closestX;
+   const dy=g.y-closestY;
+   const distance=Math.sqrt(dx*dx+dy*dy);
 
- const pick=selectPickaxe();
- let hp=pick.hp;
- const maxHP=hp;
-
- $("pickaxe").textContent=pick.icon;
- $("status").textContent="● PICO "+pick.name;
- updateHP(hp,maxHP);
-
- showResult(pick.name+" SELECCIONADO","Resistencia inicial: "+hp+" puntos.");
- await wait(900);
-
- let depth=0;
- const maxBlocks=20;
-
- while(hp>0&&depth<maxBlocks){
-  const block=$("block"+depth);
-  if(!block)break;
-
-  // Caída inicial hacia el bloque.
-  $("pickaxe").style.top=(depth*64+7)+"px";
-  $("depth").textContent="PROFUNDIDAD: "+((depth+1)*10)+" M";
-  await wait(420);
-
-  // Impacto y rebote visual.
-  $("pickaxe").classList.remove("bounce");
-  void $("pickaxe").offsetWidth;
-  $("pickaxe").classList.add("bounce");
-  block.classList.add("hit");
-  await wait(450);
-
-  // Los minerales aparecen progresivamente, pero las rocas
-  // siguen siendo frecuentes.
-  const mineralChance=Math.min(.48,.22+depth*.012);
-  const hasMineral=Math.random()<mineralChance;
-
-  // Los bloques resistentes pueden consumir más de un punto
-  // de vida del pico.
-  const damage=Math.random()<.16?2:1;
-  hp=Math.max(0,hp-damage);
-  updateHP(hp,maxHP);
-
-  if(hasMineral){
-   const mineral=randomMineral(depth);
-   total+=mineral.value;
-   found++;
-   block.innerHTML="<span>"+mineral.icon+"</span><span>"+mineral.icon+"</span><span>"+mineral.icon+"</span>";
-   showResult(mineral.name+" ENCONTRADO","+"+mineral.value+" fichas ficticias.","win");
-  }else{
-   block.innerHTML="<span>🪨</span><span>💥</span><span>🪨</span>";
-   showResult("ROCA DESTRUIDA","El impacto desgastó "+damage+" punto(s) de vida.");
+   if(distance<g.radius&&distance<best){
+    best=distance;
+    target=block;
+   }
   }
 
-  block.classList.add("destroyed");
-  broken++;
-  depth++;
-
-  $("broken").textContent=broken;
-  $("found").textContent=found;
-  $("reward").textContent=total.toLocaleString("es-CL");
-
-  // La cámara sigue al pico.
-  const shift=Math.max(0,(depth-5)*64);
-  $("track").style.transform="translateY(-"+shift+"px)";
-
-  await wait(390);
+  if(target)hitBlock(target);
  }
 
- $("pickaxe").classList.remove("bounce");
- $("status").textContent=hp<=0?"● PICO DESTRUIDO":"● FIN DE LA MINA";
+ // Recoger objetos.
+ updateItems(dt);
 
- balance+=total;
- save();
+ g.depth=Math.max(0,Math.floor(g.y/10));
+ $("depth").textContent="PROFUNDIDAD: "+g.depth+" M";
 
- const net=total-stake;
- const resultType=net>=0?"win":"loss";
- const message=hp<=0
-  ?"El pico se quedó sin resistencia después de "+broken+" impactos. "
-  :"El pico alcanzó el final de la mina. ";
-
- showResult(
-  hp<=0?"¡EL PICO SE ROMPIÓ!":"¡EXCAVACIÓN TERMINADA!",
-  message+"Recompensa: "+total+" | Resultado de la ronda: "+(net>0?"+":"")+net+" fichas.",
-  resultType
- );
-
- history.unshift({
-  pick:pick.name,stake,reward:total,net
- });
- history=history.slice(0,8);
- save();
- renderHistory();
-
- $("startBtn").disabled=false;
- busy=false;
-}
-
-function renderHistory(){
- const container=$("history");
- container.innerHTML="";
- if(!history.length){
-  container.textContent="Todavía no hay rondas.";
+ if(g.hp<=0){
+  endGame("El pico se quedó sin resistencia.");
   return;
  }
- history.forEach(item=>{
-  const row=document.createElement("div");
-  row.className="history-row";
-  const left=document.createElement("span");
-  const right=document.createElement("span");
-  left.textContent=item.pick+" · "+item.stake+" fichas";
-  right.textContent=(item.net>0?"+":"")+item.net;
-  right.style.color=item.net>=0?"var(--green)":"var(--pink)";
-  row.append(left,right);
-  container.appendChild(row);
- });
+
+ if(g.y>WORLD_ROWS*TILE-80){
+  endGame("El pico alcanzó el final de la mina.");
+  return;
+ }
+
+ updateHUD();
 }
 
-save();
-renderHistory();
+function hitBlock(block){
+ const g=game;
+
+ // Normal aproximada de colisión.
+ const cx=Math.max(block.x,Math.min(g.x,block.x+block.w));
+ const cy=Math.max(block.y,Math.min(g.y,block.y+block.h));
+ let nx=g.x-cx;
+ let ny=g.y-cy;
+ const length=Math.hypot(nx,ny)||1;
+ nx/=length;ny/=length;
+
+ // Rebote con aleatoriedad controlada.
+ const dot=g.vx*nx+g.vy*ny;
+ g.vx-=2*dot*nx;
+ g.vy-=2*dot*ny;
+
+ const randomAngle=(Math.random()-.5)*.9;
+ const speed=Math.max(240,Math.hypot(g.vx,g.vy));
+ g.vx+=Math.sin(randomAngle)*speed*.25;
+ g.vy=Math.min(g.vy,-Math.abs(g.vy)*g.restitution-120);
+ g.vx=Math.max(-650,Math.min(650,g.vx));
+
+ g.x+=nx*5;
+ g.y+=ny*5;
+ g.bounceCount++;
+ g.impactCooldown=.12;
+ g.shake=7;
+
+ // Cada impacto consume 10 HP.
+ const shielded=g.effects.shield>0;
+ if(shielded){
+  g.effects.shield--;
+ }else{
+  g.hp=Math.max(0,g.hp-10);
+ }
+
+ const blockDamage=g.effects.fire>0?65:35;
+ block.hp-=blockDamage;
+ block.hitFlash=.2;
+
+ createParticles(cx,cy,block.type==="mineral"?"#45dfff":"#91a1b6",12);
+
+ if(block.hp<=0){
+  block.alive=false;
+  g.blocksBroken++;
+  g.combo++;
+  g.comboTimer=3;
+
+  if(block.type==="mineral"){
+   const mineral=block.mineral;
+   const points=mineral.value*(1+Math.min(g.combo,5)*.1);
+   g.score+=Math.round(points);
+   g.mineralsFound++;
+   floatingItems.push({
+    x:block.x+TILE/2,y:block.y+TILE/2,
+    type:"mineral",icon:mineral.icon,value:Math.round(points),
+    vx:(Math.random()-.5)*100,vy:-130,life:12
+   });
+   createParticles(block.x+45,block.y+45,mineral.color,25);
+   notify("¡"+mineral.name+" encontrado!", "+"+Math.round(points)+" puntos");
+  }else{
+   g.score+=5;
+   createParticles(block.x+45,block.y+45,"#9aa9bd",15);
+  }
+
+  // Potenciadores aleatorios al romper ciertos bloques.
+  if(Math.random()<.075){
+   const type=boosterTypes[Math.floor(Math.random()*boosterTypes.length)];
+   floatingItems.push({
+    x:block.x+45,y:block.y+45,type:"booster",
+    booster:type.id,icon:type.icon,vx:0,vy:-150,life:15
+   });
+  }
+ }else{
+  g.score+=1;
+ }
+
+ if(g.hp<=0)g.hp=0;
+ updateHUD();
+}
+
+function impactWall(){
+ game.shake=3;
+ createParticles(game.x,game.y,"#00efff",4);
+}
+
+function updateItems(dt){
+ const g=game;
+ for(let i=floatingItems.length-1;i>=0;i--){
+  const item=floatingItems[i];
+  item.life-=dt;
+  item.vy+=250*dt;
+  item.x+=item.vx*dt;
+  item.y+=item.vy*dt;
+
+  if(g.effects.magnet>0){
+   const dx=g.x-item.x,dy=g.y-item.y;
+   const dist=Math.hypot(dx,dy);
+   if(dist<260){
+    item.x+=dx*dt*3;
+    item.y+=dy*dt*3;
+   }
+  }
+
+  if(Math.hypot(g.x-item.x,g.y-item.y)<48){
+   if(item.type==="mineral"){
+    g.score+=item.value;
+    notify("MINERAL RECOGIDO","+"+item.value+" puntos");
+   }else{
+    g.inventory[item.booster]++;
+    activateBooster(item.booster);
+    notify("POTENCIADOR OBTENIDO",item.icon+" "+item.booster.toUpperCase());
+   }
+   floatingItems.splice(i,1);
+   continue;
+  }
+
+  if(item.life<=0)floatingItems.splice(i,1);
+ }
+}
+
+function activateBooster(type){
+ const g=game;
+ const duration={
+  shield:8,magnet:12,fire:10,luck:12,speed:7
+ }[type];
+
+ g.effects[type]=Math.max(g.effects[type],duration);
+
+ if(type==="shield"){
+  g.hp=Math.min(g.maxHP,g.hp+20);
+ }
+ if(type==="speed"){
+  g.vy-=180;
+ }
+}
+
+function updateCamera(){
+ const target=Math.max(0,game.y-230);
+ cameraY+=(target-cameraY)*.08;
+}
+
+function createParticles(x,y,color,count){
+ for(let i=0;i<count;i++){
+  const angle=Math.random()*Math.PI*2;
+  const speed=60+Math.random()*250;
+  particles.push({
+   x,y,vx:Math.cos(angle)*speed,
+   vy:Math.sin(angle)*speed,
+   life:.35+Math.random()*.65,
+   max:.35+Math.random()*.65,
+   color,size:2+Math.random()*5
+  });
+ }
+}
+
+function updateParticles(dt){
+ for(let i=particles.length-1;i>=0;i--){
+  const p=particles[i];
+  p.life-=dt;
+  p.x+=p.vx*dt;
+  p.y+=p.vy*dt;
+  p.vy+=500*dt;
+  if(p.life<=0)particles.splice(i,1);
+ }
+}
+
+function draw(){
+ const g=game;
+ if(!g)return;
+
+ ctx.save();
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ // Fondo de la mina.
+ const gradient=ctx.createLinearGradient(0,0,0,canvas.height);
+ gradient.addColorStop(0,"#152439");
+ gradient.addColorStop(1,"#080e18");
+ ctx.fillStyle=gradient;
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ ctx.save();
+ ctx.translate(0,-cameraY);
+
+ // Paredes.
+ ctx.fillStyle="#34465c";
+ ctx.fillRect(0,0,30,WORLD_ROWS*TILE);
+ ctx.fillRect(canvas.width-30,0,30,WORLD_ROWS*TILE);
+
+ for(let y=0;y<WORLD_ROWS*TILE;y+=70){
+  ctx.fillStyle="#172536";
+  ctx.fillRect(0,y,30,35);
+  ctx.fillRect(canvas.width-30,y,30,35);
+ }
+
+ // Bloques individuales.
+ for(const b of g.blocks){
+  if(!b.alive)continue;
+  if(b.y<cameraY-100||b.y>cameraY+canvas.height+100)continue;
+
+  const x=b.x+30;
+  const y=b.y;
+
+  ctx.fillStyle=b.type==="mineral"?"#293e52":"#28374a";
+  ctx.fillRect(x+2,y+2,TILE-4,TILE-4);
+
+  ctx.strokeStyle=b.type==="mineral"?b.mineral.color:"#506176";
+  ctx.lineWidth=2;
+  ctx.strokeRect(x+3,y+3,TILE-6,TILE-6);
+
+  if(b.type==="mineral"){
+   ctx.font="36px Arial";
+   ctx.textAlign="center";
+   ctx.fillText(b.mineral.icon,x+45,y+55);
+  }else{
+   ctx.fillStyle="#66778c";
+   ctx.fillRect(x+18,y+18,45,5);
+   ctx.fillRect(x+25,y+42,35,5);
+  }
+
+  if(b.hitFlash>0){
+   ctx.fillStyle="#ffffff66";
+   ctx.fillRect(x,y,TILE,TILE);
+   b.hitFlash-=.02;
+  }
+
+  // Barra de resistencia de cada bloque.
+  if(b.hp<b.maxHp){
+   ctx.fillStyle="#0b1420";
+   ctx.fillRect(x+10,y+TILE-12,TILE-20,5);
+   ctx.fillStyle="#ffad49";
+   ctx.fillRect(x+10,y+TILE-12,(TILE-20)*Math.max(0,b.hp/b.maxHp),5);
+  }
+ }
+
+ // Objetos recogibles.
+ for(const item of floatingItems){
+  ctx.font="34px Arial";
+  ctx.textAlign="center";
+  ctx.fillText(item.icon,item.x+30,item.y);
+  ctx.shadowBlur=15;
+  ctx.shadowColor="#00efff";
+  ctx.shadowBlur=0;
+ }
+
+ // Pico y estela.
+ const px=g.x+30,py=g.y;
+ ctx.beginPath();
+ ctx.arc(px,py,g.radius+8,0,Math.PI*2);
+ ctx.fillStyle=g.pick.color+"33";
+ ctx.fill();
+
+ ctx.save();
+ ctx.translate(px,py);
+ ctx.rotate(Math.atan2(g.vy,g.vx)+Math.PI/2);
+ ctx.font="54px Arial";
+ ctx.textAlign="center";
+ ctx.fillText(g.pick.icon,0,17);
+ ctx.restore();
+
+ // Partículas.
+ for(const p of particles){
+  ctx.globalAlpha=Math.max(0,p.life/p.max);
+  ctx.fillStyle=p.color;
+  ctx.beginPath();
+  ctx.arc(p.x+30,p.y,p.size,0,Math.PI*2);
+  ctx.fill();
+ }
+ ctx.globalAlpha=1;
+
+ ctx.restore();
+
+ // HUD dentro del canvas.
+ ctx.fillStyle="#ffffffaa";
+ ctx.font="bold 15px Orbitron";
+ ctx.textAlign="left";
+ ctx.fillText("DEPTH "+g.depth+" M",48,35);
+ ctx.fillText("HP "+g.hp,48,60);
+
+ ctx.restore();
+
+ $("velocity").textContent="VELOCIDAD: "+Math.round(Math.hypot(g.vx,g.vy));
+ $("depthStat").textContent=g.depth+" M";
+ $("blocksStat").textContent=g.blocksBroken;
+ $("mineralsStat").textContent=g.mineralsFound;
+ $("scoreStat").textContent=g.score;
+}
+
+function updateHUD(){
+ const g=game;
+ if(!g)return;
+
+ $("hpText").textContent=g.hp+" / "+g.maxHP;
+ $("hpFill").style.width=(g.hp/g.maxHP*100)+"%";
+ $("hpFill").style.background=g.hp/g.maxHP<.3?"#ff397b":g.hp/g.maxHP<.6?"#ffd45a":"#43ff9c";
+
+ for(const b of boosterTypes){
+  $(b.id+"Count").textContent=g.inventory[b.id];
+ }
+
+ $("depthStat").textContent=g.depth+" M";
+ $("blocksStat").textContent=g.blocksBroken;
+ $("mineralsStat").textContent=g.mineralsFound;
+ $("scoreStat").textContent=g.score;
+}
+
+function notify(title,subtitle){
+ $("message").innerHTML="";
+ const strong=document.createElement("strong");
+ const p=document.createElement("p");
+ strong.textContent=title;
+ p.textContent=subtitle;
+ $("message").append(strong,p);
+}
+
+function endGame(reason){
+ const g=game;
+ if(!g||g.ended)return;
+
+ g.running=false;
+ g.ended=true;
+ $("start").disabled=false;
+ $("status").textContent="● SIMULACIÓN TERMINADA";
+ $("physics").textContent="FÍSICA: FINALIZADA";
+
+ records.depth=Math.max(records.depth,g.depth);
+ records.score=Math.max(records.score,g.score);
+ records.minerals+=g.mineralsFound;
+ localStorage.setItem("miner_records",JSON.stringify(records));
+
+ $("bestDepth").textContent=records.depth+" M";
+ $("bestScore").textContent=records.score;
+ $("totalMinerals").textContent=records.minerals;
+
+ notify("EXCAVACIÓN FINALIZADA",reason+" Puntuación: "+g.score);
+}
+
+$("bestDepth").textContent=records.depth+" M";
+$("bestScore").textContent=records.score;
+$("totalMinerals").textContent=records.minerals;
+
+// La simulación empieza al pulsar el botón.
+// No hay apuestas, pagos ni pérdidas de fichas.
 </script>
 </body>
 </html>

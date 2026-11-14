@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MINER'S DROP | LUCKY DISTRICT</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <a href="../../index.html" class="brand">
+            <span class="brand-icon">◆</span>
+            LUCKY DISTRICT
+        </a>
+
+        <div class="topbar-center">
+            <span class="game-status">
+                <span class="status-dot"></span>
+                ARCADE MODE
+            </span>
+        </div>
+
+        <div class="token-display">
+            <span>◆</span>
+            <strong id="tokenBalance">0</strong>
+            <small>DT</small>
+        </div>
+
+    </header>
+
+
+    <main class="game-layout">
+
+        <section class="game-heading">
+
+            <div>
+                <p class="eyebrow">LUCKY DISTRICT ORIGINAL</p>
+
+                <h1>MINER'S <span>DROP</span></h1>
+
+                <p class="subtitle">
+                    Una caída. Una mina. Un destino aleatorio.
+                </p>
+            </div>
+
+            <div class="version">
+                VERSION 3.0
+            </div>
+
+        </section>
+
+
+        <section class="game-panel">
+
+            <div class="game-sidebar">
+
+                <div class="stat-card">
+                    <span class="stat-label">PROFUNDIDAD</span>
+                    <strong id="depthDisplay">0 m</strong>
+                </div>
+
+                <div class="stat-card">
+
+                    <span class="stat-label">DURABILIDAD</span>
+
+                    <strong id="durabilityDisplay">100%</strong>
+
+                    <div class="progress-track">
+                        <div id="durabilityBar"></div>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">MINERALES</span>
+                    <strong id="mineralsDisplay">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">PUNTUACIÓN</span>
+                    <strong id="scoreDisplay">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">OBJETIVO</span>
+                    <strong id="objectiveDisplay">200 DT</strong>
+                </div>
+
+                <div class="pickaxe-card">
+
+                    <span class="stat-label">PICO ACTUAL</span>
+
+                    <strong id="pickaxeDisplay">---</strong>
+
+                    <span id="pickaxeDescription">
+                        Esperando expedición
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="mine-container">
+
+                <div class="mine-topbar">
+                    <span>SECTOR MINERO</span>
+                    <span id="sectorDisplay">SUPERFICIE</span>
+                </div>
+
+                <canvas id="mineCanvas"></canvas>
+
+
+                <!-- START OVERLAY -->
+
+                <div class="mine-overlay" id="startOverlay">
+
+                    <div class="overlay-content">
+
+                        <div class="pickaxe-symbol">⚒</div>
+
+                        <h2>¿LISTO PARA CAER?</h2>
+
+                        <p>
+                            Selecciona el objetivo de tu expedición.
+                            Cuanto mayor sea, más puntos entregarán
+                            los minerales.
+                        </p>
+
+
+                        <div class="challenge-selector">
+
+                            <label for="targetScoreSelect">
+                                OBJETIVO DE EXPEDICIÓN
+                            </label>
+
+                            <div class="select-wrapper">
+
+                                <span>◆</span>
+
+                                <select id="targetScoreSelect">
+
+                                    <option value="100">
+                                        100 DT
+                                    </option>
+
+                                    <option value="200" selected>
+                                        200 DT
+                                    </option>
+
+                                    <option value="500">
+                                        500 DT
+                                    </option>
+
+                                    <option value="1000">
+                                        1000 DT
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <small id="targetDescription">
+                                Objetivo de 200 puntos
+                            </small>
+
+                        </div>
+
+
+                        <button id="startButton">
+                            INICIAR EXPEDICIÓN
+                        </button>
+
+                        <small>
+                            EXPEDICIÓN ARCADE GRATUITA
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT OVERLAY -->
+
+                <div class="mine-overlay hidden" id="resultOverlay">
+
+                    <div class="overlay-content">
+
+                        <span class="result-tag" id="resultTag">
+                            RESULTADO
+                        </span>
+
+                        <h2 id="resultTitle">
+                            EXPEDICIÓN FINALIZADA
+                        </h2>
+
+                        <p id="resultDescription"></p>
+
+
+                        <div class="result-stats">
+
+                            <div>
+                                <span>OBJETIVO</span>
+                                <strong id="resultTarget">200 DT</strong>
+                            </div>
+
+                            <div>
+                                <span>PROFUNDIDAD</span>
+                                <strong id="resultDepth">0 m</strong>
+                            </div>
+
+                            <div>
+                                <span>MINERALES</span>
+                                <strong id="resultMinerals">0</strong>
+                            </div>
+
+                            <div>
+                                <span>PUNTOS</span>
+                                <strong id="resultScore">0</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="reward">
+
+                            <span>RECOMPENSA DE PROGRESO</span>
+
+                            <strong id="resultReward">+0 DT</strong>
+
+                        </div>
+
+
+                        <button id="restartButton">
+                            NUEVA EXPEDICIÓN
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="bottom-information">
+
+            <div>
+                <span class="info-icon">⚒</span>
+
+                <div>
+                    <strong>CAÍDA AUTOMÁTICA</strong>
+                    <p>No necesitas controlar el pico.</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="info-icon">◇</span>
+
+                <div>
+                    <strong>MINERALES ALEATORIOS</strong>
+                    <p>La mina cambia en cada expedición.</p>
+                </div>
+            </div>
+
+            <div>
+                <span class="info-icon">◆</span>
+
+                <div>
+                    <strong>DISTRICT TOKENS</strong>
+                    <p>Puntos ficticios de progreso arcade.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <footer>
+            LUCKY DISTRICT © 2026 · MINER'S DROP
+        </footer>
+
+    </main>
+
+
+    <script type="module" src="js/game.js"></script>
+
+</body>
+</html>

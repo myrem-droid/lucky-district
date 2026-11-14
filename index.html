@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#090b12">
+    <meta name="description" content="LUCKY DISTRICT - Un universo de juegos arcade, azar y entretenimiento.">
+
+    <title>LUCKY DISTRICT | Arcade District</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <a href="#" class="brand" aria-label="Lucky District inicio">
+            <div class="brand-symbol">
+                <span>L</span>
+                <div class="brand-dot"></div>
+            </div>
+
+            <div class="brand-name">
+                <strong>LUCKY</strong>
+                <span>DISTRICT</span>
+            </div>
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="#home" class="nav-link active">Inicio</a>
+            <a href="#games" class="nav-link">Juegos</a>
+            <button class="nav-link" id="favoritesNav">Favoritos</button>
+        </nav>
+
+        <div class="header-actions">
+
+            <div class="points-display">
+                <span class="points-icon">◆</span>
+
+                <div>
+                    <small>PUNTOS DEMO</small>
+                    <strong id="headerPoints">1.000</strong>
+                </div>
+            </div>
+
+            <button class="profile-button" id="profileButton" aria-label="Abrir perfil">
+                <span id="profileInitial">G</span>
+            </button>
+
+            <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero-section" id="home">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-indicator"></span>
+                    ARCADE DISTRICT / EST. 2026
+                </div>
+
+                <h1>
+                    ENTER THE
+                    <span>DISTRICT.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Un universo de juegos, desafíos y experiencias.
+                    Explora el distrito y encuentra tu próximo juego favorito.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#games" class="primary-button">
+                        EXPLORAR JUEGOS
+                        <span>↗</span>
+                    </a>
+
+                    <a href="#featured" class="secondary-button">
+                        JUEGO DESTACADO
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <strong id="gameCount">04</strong>
+                        <span>JUEGOS</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat">
+                        <strong>24/7</strong>
+                        <span>DISTRICT</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat">
+                        <strong>∞</strong>
+                        <span>POSIBILIDADES</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-art">
+
+                <div class="hero-art-circle circle-one"></div>
+                <div class="hero-art-circle circle-two"></div>
+
+                <div class="hero-card">
+
+                    <div class="hero-card-top">
+                        <span>LD / 001</span>
+                        <span class="live-label">● SYSTEM ONLINE</span>
+                    </div>
+
+                    <div class="hero-card-symbol">✦</div>
+
+                    <div class="hero-card-bottom">
+                        <span>LUCKY DISTRICT</span>
+                        <strong>PLAY YOUR WAY.</strong>
+                    </div>
+
+                </div>
+
+                <div class="floating-chip chip-one">★</div>
+                <div class="floating-chip chip-two">7</div>
+                <div class="floating-chip chip-three">✦</div>
+
+            </div>
+
+            <div class="hero-bottom-label">
+                SCROLL TO EXPLORE <span>↓</span>
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED GAME -->
+
+        <section class="featured-section section-container" id="featured">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-kicker">THE DISTRICT SELECTS</span>
+                    <h2>DESTACADO<span>.</span></h2>
+                </div>
+
+                <span class="section-number">001 / FEATURED</span>
+
+            </div>
+
+            <article class="featured-card">
+
+                <div class="featured-art">
+
+                    <div class="featured-art-grid"></div>
+
+                    <div class="mine-depth depth-one"></div>
+                    <div class="mine-depth depth-two"></div>
+                    <div class="mine-depth depth-three"></div>
+
+                    <div class="featured-pickaxe">
+                        ⛏
+                    </div>
+
+                    <div class="featured-mineral mineral-one">◆</div>
+                    <div class="featured-mineral mineral-two">◆</div>
+                    <div class="featured-mineral mineral-three">◆</div>
+
+                    <div class="featured-art-label">
+                        LD GAME / 001
+                    </div>
+
+                </div>
+
+                <div class="featured-info">
+
+                    <div class="featured-topline">
+                        <span class="game-category">ARCADE / LUCK</span>
+                        <span class="coming-badge">EN DESARROLLO</span>
+                    </div>
+
+                    <h3>MINER'S <span>DROP</span></h3>
+
+                    <p>
+                        Una mina vertical llena de minerales, sorpresas
+                        y picos diferentes. ¿Hasta dónde podrás llegar?
+                    </p>
+
+                    <div class="featured-details">
+                        <div>
+                            <small>TIPO</small>
+                            <strong>ARCADE</strong>
+                        </div>
+
+                        <div>
+                            <small>MODALIDAD</small>
+                            <strong>UN JUGADOR</strong>
+                        </div>
+
+                        <div>
+                            <small>ESTADO</small>
+                            <strong>PRÓXIMAMENTE</strong>
+                        </div>
+                    </div>
+
+                    <button class="primary-button featured-button" data-game="miners-drop">
+                        VER JUEGO
+                        <span>↗</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- GAMES -->
+
+        <section class="games-section section-container" id="games">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-kicker">CHOOSE YOUR EXPERIENCE</span>
+                    <h2>THE GAMES<span>.</span></h2>
+                </div>
+
+                <span class="section-number">002 / GAME LIBRARY</span>
+
+            </div>
+
+
+            <div class="games-toolbar">
+
+                <div class="filter-list" id="filterList">
+
+                    <button class="filter-button active" data-filter="all">
+                        TODOS
+                    </button>
+
+                    <button class="filter-button" data-filter="arcade">
+                        ARCADE
+                    </button>
+
+                    <button class="filter-button" data-filter="luck">
+                        AZAR
+                    </button>
+
+                    <button class="filter-button" data-filter="strategy">
+                        ESTRATEGIA
+                    </button>
+
+                </div>
+
+                <div class="search-box">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="gameSearch"
+                        placeholder="Buscar juego..."
+                        autocomplete="off"
+                    >
+
+                    <kbd>/</kbd>
+                </div>
+
+            </div>
+
+
+            <div class="games-grid" id="gamesGrid">
+                <!-- Los juegos se generan mediante JavaScript -->
+            </div>
+
+            <div class="empty-state hidden" id="emptyState">
+                <span>⌕</span>
+                <h3>NO SE ENCONTRARON JUEGOS</h3>
+                <p>Prueba con otro nombre o categoría.</p>
+            </div>
+
+        </section>
+
+
+        <!-- INFORMATION -->
+
+        <section class="district-info section-container">
+
+            <div class="info-card">
+
+                <div class="info-icon">✦</div>
+
+                <div>
+                    <span>THE DISTRICT EXPERIENCE</span>
+                    <h3>UN SOLO LUGAR. MUCHAS EXPERIENCIAS.</h3>
+
+                    <p>
+                        Descubre juegos independientes, consigue puntuaciones,
+                        supera desafíos y encuentra nuevas formas de jugar.
+                    </p>
+                </div>
+
+                <div class="info-decoration">LD.</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <a href="#home" class="footer-brand">
+            LUCKY DISTRICT<span>.</span>
+        </a>
+
+        <div class="footer-center">
+            AN ARCADE EXPERIENCE
+        </div>
+
+        <div class="footer-right">
+            © 2026 LUCKY DISTRICT
+        </div>
+
+    </footer>
+
+
+    <!-- PROFILE MODAL -->
+
+    <div class="modal-overlay hidden" id="profileModal">
+
+        <div class="profile-modal">
+
+            <button class="modal-close" id="closeProfile">×</button>
+
+            <span class="section-kicker">YOUR DISTRICT ID</span>
+
+            <div class="profile-avatar" id="modalAvatar">G</div>
+
+            <h2 id="modalUsername">GUEST PLAYER</h2>
+
+            <p>MIEMBRO DEL DISTRICT</p>
+
+            <div class="profile-points">
+                <small>PUNTOS DE DEMOSTRACIÓN</small>
+                <strong id="modalPoints">1.000</strong>
+            </div>
+
+            <label for="usernameInput">NOMBRE DE JUGADOR</label>
+
+            <input
+                type="text"
+                id="usernameInput"
+                maxlength="16"
+                placeholder="Escribe tu nombre"
+            >
+
+            <button class="primary-button save-profile-button" id="saveProfile">
+                GUARDAR PERFIL
+            </button>
+
+            <button class="reset-button" id="resetDemo">
+                RESTABLECER DEMOSTRACIÓN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast">
+        <span class="toast-icon">✦</span>
+        <span id="toastMessage">Mensaje</span>
+    </div>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

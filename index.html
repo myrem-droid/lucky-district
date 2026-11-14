@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUCKY DISTRICT</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg:#080b12;
+  --panel:#101725;
+  --panel2:#151f30;
+  --cyan:#00f0ff;
+  --purple:#a855f7;
+  --pink:#ff3cac;
+  --green:#42ff9e;
+  --text:#e9f3ff;
+  --muted:#8191a8;
+  --border:rgba(0,240,255,.17);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Rajdhani',sans-serif;min-height:100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 0%,rgba(0,240,255,.09),transparent 40%),
+    radial-gradient(ellipse at 90% 50%,rgba(168,85,247,.09),transparent 45%);
+}
+button{font-family:inherit;cursor:pointer}
+header{
+  height:76px;padding:0 5%;display:flex;align-items:center;
+  justify-content:space-between;border-bottom:1px solid var(--border);
+  background:rgba(8,11,18,.88);position:sticky;top:0;z-index:10;
+  backdrop-filter:blur(15px);
+}
+.logo{font-family:Orbitron;font-size:20px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--cyan);text-shadow:0 0 15px var(--cyan)}
+.header-right{display:flex;align-items:center;gap:18px}
+.balance{
+  border:1px solid rgba(66,255,158,.35);padding:9px 15px;
+  border-radius:8px;color:var(--green);font-weight:700;font-size:18px;
+  background:rgba(66,255,158,.06)
+}
+.balance small{color:var(--muted);font-size:11px;margin-right:7px}
+main{max-width:1250px;margin:auto;padding:35px 22px 70px}
+.hero{
+  padding:36px 35px;border:1px solid var(--border);border-radius:16px;
+  background:linear-gradient(115deg,rgba(0,240,255,.09),rgba(168,85,247,.09)),
+  var(--panel);position:relative;overflow:hidden;
+}
+.hero:after{
+  content:"LUCKY";position:absolute;right:20px;top:-30px;
+  font:900 120px Orbitron;color:rgba(255,255,255,.025);
+}
+.eyebrow{color:var(--cyan);font:700 11px Orbitron;letter-spacing:3px}
+h1{font:900 clamp(27px,5vw,45px) Orbitron;margin:13px 0}
+.hero p{color:var(--muted);font-size:18px;max-width:570px;margin:0}
+.section-title{
+  font:700 17px Orbitron;letter-spacing:1px;margin:35px 0 17px;
+}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.game-card{
+  min-height:185px;padding:22px;border-radius:13px;
+  background:linear-gradient(145deg,var(--panel2),var(--panel));
+  border:1px solid var(--border);transition:.2s;cursor:pointer;
+}
+.game-card:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 8px 30px #00f0ff17}
+.game-icon{font-size:36px;margin-bottom:15px}
+.game-card h3{font:700 14px Orbitron;margin:0 0 9px}
+.game-card p{color:var(--muted);font-size:15px;margin:0}
+.game-card.active{border-color:var(--cyan);background:linear-gradient(145deg,#112838,#111725)}
+.tag{font-size:10px;color:var(--green);letter-spacing:1px;margin-top:14px}
+#miner{display:none;margin-top:32px}
+.miner-head{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:15px;margin-bottom:20px;
+}
+.miner-head h2{font:800 23px Orbitron;margin:0}
+.back{
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  border-radius:7px;padding:9px 15px;font-size:15px;
+}
+.back:hover{color:white;border-color:var(--cyan)}
+.miner-layout{display:grid;grid-template-columns:330px 1fr;gap:18px}
+.panel{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:13px;padding:20px;
+}
+.panel h3{font:700 13px Orbitron;letter-spacing:1px;margin:0 0 17px}
+label{display:block;color:var(--muted);font-size:15px;margin-bottom:8px}
+input{
+  width:100%;background:#080e18;border:1px solid var(--border);
+  border-radius:7px;padding:12px;color:white;font:700 18px Rajdhani;
+  outline:none;margin-bottom:12px;
+}
+input:focus{border-color:var(--cyan)}
+.quick-bets{display:flex;gap:7px;margin-bottom:19px}
+.quick-bets button{
+  flex:1;background:#192438;color:var(--text);border:1px solid var(--border);
+  border-radius:6px;padding:8px 2px;font-weight:700;
+}
+.quick-bets button:hover{border-color:var(--cyan)}
+.pick-list{display:grid;gap:8px}
+.pick-option{
+  display:flex;align-items:center;gap:11px;padding:10px;
+  border:1px solid var(--border);border-radius:8px;background:#0c1320;
+}
+.pick-option span:first-child{font-size:25px}
+.pick-option strong{display:block;font-size:15px}
+.pick-option small{color:var(--muted);font-size:12px}
+.pick-option .chance{margin-left:auto;color:var(--cyan);font-size:12px}
+.start{
+  width:100%;border:0;border-radius:8px;padding:15px;margin-top:20px;
+  color:#061016;background:linear-gradient(90deg,var(--cyan),#78f7ff);
+  font:900 13px Orbitron;letter-spacing:1px;
+  box-shadow:0 0 22px rgba(0,240,255,.15);transition:.2s;
+}
+.start:hover{filter:brightness(1.15);transform:translateY(-2px)}
+.start:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.mine-panel{min-height:610px;position:relative;overflow:hidden}
+.mine-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.mine-status{color:var(--cyan);font:700 11px Orbitron;letter-spacing:1px}
+.depth{color:var(--muted);font-size:14px}
+.mine{
+  max-width:440px;margin:22px auto 0;position:relative;
+  height:440px;overflow:hidden;border-radius:10px;
+  border:2px solid #283b50;
+  background:linear-gradient(90deg,#111a26,#263449 50%,#111a26);
+  box-shadow:inset 0 0 45px #000;
+}
+.mine:before,.mine:after{
+  content:"";position:absolute;top:0;bottom:0;width:24px;
+  background:repeating-linear-gradient(180deg,#39475a 0 20px,#1a2533 20px 40px);
+  z-index:2;opacity:.8;
+}
+.mine:before{left:0}.mine:after{right:0}
+.mine-track{
+  position:absolute;left:28px;right:28px;top:0;
+  display:flex;flex-direction:column;transition:transform .7s ease;
+}
+.layer{
+  height:61px;flex-shrink:0;display:flex;align-items:center;
+  justify-content:space-around;border-bottom:2px solid #0a111c;
+  background:linear-gradient(90deg,#273343,#344254,#253243);
+  position:relative;font-size:24px;
+}
+.layer:nth-child(even){background:linear-gradient(90deg,#1d2b3a,#29394b,#1d2b3a)}
+.layer.destroyed{animation:breakBlock .35s forwards}
+@keyframes breakBlock{
+  0%{transform:scale(1);opacity:1}
+  40%{transform:scale(1.1);filter:brightness(2)}
+  100%{transform:scale(.3) rotate(3deg);opacity:0}
+}
+.pickaxe{
+  position:absolute;z-index:4;left:50%;top:3px;
+  transform:translateX(-50%);font-size:39px;
+  filter:drop-shadow(0 0 12px var(--cyan));
+  transition:top .55s cubic-bezier(.2,.7,.2,1);
+}
+.pickaxe.digging{animation:dig .22s infinite alternate}
+@keyframes dig{from{transform:translateX(-50%) rotate(-20deg)}to{transform:translateX(-50%) rotate(20deg)}}
+.mine-bottom{
+  position:absolute;bottom:9px;left:0;right:0;text-align:center;
+  color:#71839b;font:10px Orbitron;z-index:3;
+}
+.result{
+  text-align:center;margin-top:18px;min-height:82px;
+  border:1px solid var(--border);background:#0b1320;
+  border-radius:9px;padding:15px;
+}
+.result strong{display:block;font:700 16px Orbitron;margin-bottom:6px}
+.result p{color:var(--muted);margin:0;font-size:15px}
+.result.win strong{color:var(--green)}
+.result.loss strong{color:var(--pink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
+.stat{padding:12px;background:#0b1320;border:1px solid var(--border);border-radius:8px}
+.stat small{display:block;color:var(--muted);font-size:12px}
+.stat strong{font:700 16px Orbitron;color:var(--cyan)}
+.history{margin-top:17px}
+.history-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #202b3b;font-size:14px}
+.history-row span:last-child{color:var(--green)}
+.notice{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.5}
+footer{text-align:center;color:#53647a;font-size:13px;padding:25px;border-top:1px solid var(--border)}
+@media(max-width:800px){
+  .miner-layout{grid-template-columns:1fr}
+  .mine-panel{min-height:580px}
+  .mine{height:400px}
+  header{padding:0 15px}
+  .logo{font-size:15px}
+  main{padding:22px 14px 50px}
+  .hero{padding:27px 20px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">LUCKY <span>DISTRICT</span></div>
+  <div class="header-right">
+    <div class="balance"><small>FICHAS</small>🪙 <span id="balance">1000</span></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">WELCOME TO THE DISTRICT</div>
+    <h1>YOUR LUCK. YOUR DISTRICT.</h1>
+    <p>Explora los juegos del distrito, descubre nuevas máquinas y prueba tu suerte en experiencias de azar con puntos ficticios.</p>
+  </section>
+
+  <div id="lobby">
+    <div class="section-title">▰ EXPLORA LOS JUEGOS</div>
+    <div class="games">
+      <div class="game-card active" onclick="openMiner()">
+        <div class="game-icon">⛏️</div>
+        <h3>MINER'S DROP</h3>
+        <p>Un pico aleatorio desciende por una mina llena de minerales y sorpresas.</p>
+        <div class="tag">● DISPONIBLE</div>
+      </div>
+      <div class="game-card">
+        <div class="game-icon">🎰</div>
+        <h3>NEON SLOTS</h3>
+        <p>Una máquina de símbolos y combinaciones.</p>
+        <div class="tag">PRÓXIMAMENTE</div>
+      </div>
+      <div class="game-card">
+        <div class="game-icon">🎡</div>
+        <h3>LUCKY WHEEL</h3>
+        <p>Una rueda giratoria llena de resultados sorpresa.</p>
+        <div class="tag">PRÓXIMAMENTE</div>
+      </div>
+      <div class="game-card">
+        <div class="game-icon">🎲</div>
+        <h3>DICE DISTRICT</h3>
+        <p>Dados, números y resultados aleatorios.</p>
+        <div class="tag">PRÓXIMAMENTE</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="miner">
+    <div class="miner-head">
+      <h2>⛏️ MINER'S DROP</h2>
+      <button class="back" onclick="closeMiner()">← VOLVER AL LOBBY</button>
+    </div>
+
+    <div class="miner-layout">
+      <aside class="panel">
+        <h3>01 / CONFIGURACIÓN</h3>
+        <label for="stake">Cantidad de fichas de la ronda</label>
+        <input id="stake" type="number" min="1" max="1000" value="50">
+        <div class="quick-bets">
+          <button onclick="setStake(10)">10</button>
+          <button onclick="setStake(50)">50</button>
+          <button onclick="setStake(100)">100</button>
+          <button onclick="setStake(250)">250</button>
+        </div>
+
+        <h3>02 / LOS CINCO PICOS</h3>
+        <div class="pick-list">
+          <div class="pick-option">
+            <span>🪓</span><div><strong>PIEDRA</strong><small>Equilibrado</small></div>
+            <span class="chance">×1.0</span>
+          </div>
+          <div class="pick-option">
+            <span>⛏️</span><div><strong>HIERRO</strong><small>Buen alcance</small></div>
+            <span class="chance">×1.2</span>
+          </div>
+          <div class="pick-option">
+            <span>🔱</span><div><strong>ORO</strong><small>Más profundidad</small></div>
+            <span class="chance">×1.5</span>
+          </div>
+          <div class="pick-option">
+            <span>💎</span><div><strong>DIAMANTE</strong><small>Gran alcance</small></div>
+            <span class="chance">×1.8</span>
+          </div>
+          <div class="pick-option">
+            <span>⚡</span><div><strong>NEÓN</strong><small>El más profundo</small></div>
+            <span class="chance">×2.0</span>
+          </div>
+        </div>
+
+        <button class="start" id="startBtn" onclick="startGame()">LANZAR EL PICO ⛏️</button>
+        <p class="notice">Los cinco picos se seleccionan al azar. Sus características afectan la profundidad y el resultado de la ronda. Las fichas son puntos ficticios sin valor monetario, compra ni canje.</p>
+      </aside>
+
+      <section class="panel mine-panel">
+        <div class="mine-top">
+          <div class="mine-status" id="mineStatus">● MINA EN ESPERA</div>
+          <div class="depth" id="depth">PROFUNDIDAD: 0 M</div>
+        </div>
+
+        <div class="mine" id="mine">
+          <div class="mine-track" id="mineTrack"></div>
+          <div class="pickaxe" id="pickaxe">⛏️</div>
+          <div class="mine-bottom">▼ ZONA PROFUNDA ▼</div>
+        </div>
+
+        <div class="result" id="result">
+          <strong>LA MINA TE ESPERA</strong>
+          <p>Configura tus fichas y lanza uno de los cinco picos.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><small>PIEDRAS ROTAS</small><strong id="broken">0</strong></div>
+          <div class="stat"><small>MINERALES</small><strong id="found">0</strong></div>
+          <div class="stat"><small>RECOMPENSA</small><strong id="reward">0</strong></div>
+        </div>
+
+        <div class="history">
+          <h3 style="margin-top:20px">ÚLTIMAS RONDAS</h3>
+          <div id="history"><div class="history-row"><span>Esperando primera ronda...</span><span>—</span></div></div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  LUCKY DISTRICT © 2026 · EXPERIENCIA DE JUEGO CON FICHAS FICTICIAS
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+const pickaxes = [
+  {name:"PIEDRA",icon:"🪓",depth:5,multiplier:1.0},
+  {name:"HIERRO",icon:"⛏️",depth:7,multiplier:1.2},
+  {name:"ORO",icon:"🔱",depth:9,multiplier:1.5},
+  {name:"DIAMANTE",icon:"💎",depth:11,multiplier:1.8},
+  {name:"NEÓN",icon:"⚡",depth:12,multiplier:2.0}
+];
+
+// Los valores son puntos ficticios del juego.
+const minerals = [
+  {name:"CARBÓN",icon:"⚫",value:5},
+  {name:"COBRE",icon:"🟠",value:10},
+  {name:"HIERRO",icon:"🩶",value:18},
+  {name:"ORO",icon:"🟡",value:35},
+  {name:"ESMERALDA",icon:"🟢",value:65},
+  {name:"DIAMANTE",icon:"💎",value:110},
+  {name:"CRISTAL NEÓN",icon:"💠",value:180}
+];
+
+let balance = Number(localStorage.getItem("ld_balance")) || 1000;
+let history = JSON.parse(localStorage.getItem("ld_history") || "[]");
+let busy = false;
+
+function save(){
+  localStorage.setItem("ld_balance",balance);
+  localStorage.setItem("ld_history",JSON.stringify(history.slice(0,8)));
+  $("balance").textContent = balance.toLocaleString("es-CL");
+}
+
+function openMiner(){
+  $("lobby").style.display="none";
+  $("miner").style.display="block";
+  window.scrollTo({top:0,behavior:"smooth"});
+  createMine();
+}
+
+function closeMiner(){
+  if(busy)return;
+  $("miner").style.display="none";
+  $("lobby").style.display="block";
+}
+
+function setStake(value){
+  $("stake").value=value;
+}
+
+function createMine(){
+  const track=$("mineTrack");
+  track.innerHTML="";
+  for(let i=0;i<12;i++){
+    const block=document.createElement("div");
+    block.className="layer";
+    block.id="block"+i;
+    block.innerHTML='<span>🪨</span><span>🪨</span><span>🪨</span>';
+    track.appendChild(block);
+  }
+  $("pickaxe").style.top="3px";
+  $("pickaxe").classList.remove("digging");
+}
+
+function randomMineral(depth){
+  // Los minerales de mayor valor aparecen con más frecuencia
+  // conforme aumenta la profundidad.
+  const pools=[
+    [0,0,1,1,2],
+    [0,1,1,2,2,3],
+    [1,2,2,3,3,4],
+    [2,3,3,4,4,5],
+    [3,4,4,5,5,6],
+    [4,5,5,6,6,6]
+  ];
+  const pool=pools[Math.min(5,Math.floor(depth/2))];
+  return minerals[pool[Math.floor(Math.random()*pool.length)]];
+}
+
+function wait(ms){
+  return new Promise(resolve=>setTimeout(resolve,ms));
+}
+
+async function startGame(){
+  if(busy)return;
+
+  const stake=Math.floor(Number($("stake").value));
+  if(!Number.isFinite(stake)||stake<1){
+    showResult("CANTIDAD NO VÁLIDA","Introduce una cantidad de fichas válida.","loss");
+    return;
+  }
+  if(stake>balance){
+    showResult("FICHAS INSUFICIENTES","No tienes suficientes puntos ficticios para esta ronda.","loss");
+    return;
+  }
+
+  busy=true;
+  $("startBtn").disabled=true;
+  balance-=stake;
+  save();
+
+  createMine();
+  $("broken").textContent="0";
+  $("found").textContent="0";
+  $("reward").textContent="0";
+  $("depth").textContent="PROFUNDIDAD: 0 M";
+  $("mineStatus").textContent="● SELECCIONANDO PICO...";
+  showResult("¡EL PICO ESTÁ EN CAMINO!","La selección se está realizando al azar.","");
+
+  await wait(850);
+
+  const pick=pickaxes[Math.floor(Math.random()*pickaxes.length)];
+  const pickaxe=$("pickaxe");
+  pickaxe.textContent=pick.icon;
+  pickaxe.classList.add("digging");
+
+  $("mineStatus").textContent="● PICO: "+pick.name;
+  showResult(pick.name+" SELECCIONADO", "Profundidad máxima estimada: "+pick.depth+" bloques.","");
+
+  await wait(700);
+
+  let total=0;
+  let found=0;
+  let broken=0;
+  const maxDepth=pick.depth;
+
+  for(let i=0;i<maxDepth;i++){
+    $("depth").textContent="PROFUNDIDAD: "+((i+1)*10)+" M";
+    pickaxe.style.top=(i*61+5)+"px";
+
+    await wait(580);
+
+    const block=$("block"+i);
+    if(!block)break;
+
+    const isMineral=Math.random()<Math.min(.78,.32+i*.045);
+    if(isMineral){
+      const mineral=randomMineral(i);
+      total+=Math.round(mineral.value*pick.multiplier);
+      found++;
+      block.innerHTML='<span>'+mineral.icon+'</span><span>'+mineral.icon+'</span><span>'+mineral.icon+'</span>';
+      showResult(mineral.name+" ENCONTRADO", "+"+Math.round(mineral.value*pick.multiplier)+" fichas ficticias","win");
+    }else{
+      block.innerHTML='<span>🪨</span><span>💥</span><span>🪨</span>';
+      showResult("ROCA DESTRUIDA","No se encontraron minerales en este bloque.","");
+    }
+
+    block.classList.add("destroyed");
+    broken++;
+    $("broken").textContent=broken;
+    $("found").textContent=found;
+    $("reward").textContent=total.toLocaleString("es-CL");
+
+    // Desplaza la mina para mantener visible el pico.
+    const shift=Math.max(0,(i-4)*61);
+    $("mineTrack").style.transform="translateY(-"+shift+"px)";
+    pickaxe.style.top=(Math.min(i,5)*61+5)+"px";
+
+    await wait(350);
+  }
+
+  pickaxe.classList.remove("digging");
+  $("mineStatus").textContent="● RONDA FINALIZADA";
+
+  balance+=total;
+  save();
+
+  const difference=total-stake;
+  const outcome=difference>=0?"win":"loss";
+  const message=difference>=0
+    ?"Terminaste la ronda con un resultado positivo."
+    :"La recompensa fue menor que las fichas utilizadas.";
+
+  showResult(
+    difference>=0?"¡BUENA EXCAVACIÓN!":"RONDA FINALIZADA",
+    message+" Resultado neto: "+(difference>0?"+":"")+difference+" fichas.",
+    outcome
+  );
+
+  history.unshift({
+    pick:pick.name,
+    reward:total,
+    stake:stake,
+    difference:difference
+  });
+  history=history.slice(0,8);
+  localStorage.setItem("ld_history",JSON.stringify(history));
+  renderHistory();
+
+  $("startBtn").disabled=false;
+  busy=false;
+}
+
+function showResult(title,message,type){
+  const box=$("result");
+  box.className="result "+type;
+  box.innerHTML="";
+  const strong=document.createElement("strong");
+  strong.textContent=title;
+  const p=document.createElement("p");
+  p.textContent=message;
+  box.append(strong,p);
+}
+
+function renderHistory(){
+  const container=$("history");
+  container.innerHTML="";
+  if(history.length===0){
+    container.textContent="Todavía no hay rondas.";
+    return;
+  }
+  history.forEach(item=>{
+    const row=document.createElement("div");
+    row.className="history-row";
+    const left=document.createElement("span");
+    left.textContent=item.pick+" · "+item.stake+" fichas";
+    const right=document.createElement("span");
+    right.textContent=(item.difference>0?"+":"")+item.difference;
+    right.style.color=item.difference>=0?"var(--green)":"var(--pink)";
+    row.append(left,right);
+    container.appendChild(row);
+  });
+}
+
+save();
+renderHistory();
+</script>
+</body>
+</html>
